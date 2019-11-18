@@ -10,7 +10,7 @@
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/meow_bottom_nav"/>
+        android:layout_above="@+id/meow_bottom_nav" />
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
         android:id="@+id/meow_bottom_nav"

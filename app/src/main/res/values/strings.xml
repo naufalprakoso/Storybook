@@ -4,6 +4,14 @@
     <string name="title_profile">Profile</string>
     <string name="title_add_storybook">Add Storybook</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_hello">Hello</string>
+    <string name="login_desc">Sign in to your account</string>
+    <string name="title_email">Email</string>
+    <string name="title_password">Password</string>
+    <string name="login_register_desc">Don\'t have an account?</string>
+    <string name="register_title">Create account</string>
+    <string name="title_mobile">Mobile</string>
+    <string name="title_name">Name</string>
+    <string name="validation_must_be_filled">Must be filled</string>
 </resources>

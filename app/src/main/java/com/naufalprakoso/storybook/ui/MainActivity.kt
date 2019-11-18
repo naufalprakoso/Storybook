@@ -36,17 +36,14 @@ class MainActivity : AppCompatActivity() {
                 1 -> {
                     currentFragment = ExploreFragment.newInstance()
                     openFragment(currentFragment)
-                    supportActionBar?.title = getString(R.string.title_explore)
                 }
                 2 -> {
                     currentFragment = AddStoryFragment.newInstance()
                     openFragment(currentFragment)
-                    supportActionBar?.title = getString(R.string.title_add_storybook)
                 }
                 3 -> {
                     currentFragment = ProfileFragment.newInstance()
                     openFragment(currentFragment)
-                    supportActionBar?.title = getString(R.string.title_profile)
                 }
             }
         }
