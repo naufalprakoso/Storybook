@@ -30,12 +30,18 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         when (v?.id) {
             R.id.btn_back -> finish()
             R.id.btn_register -> {
+                val username = edt_username.text.toString()
                 val name = edt_name.text.toString()
                 val email = edt_email.text.toString()
                 val password = edt_password.text.toString()
                 val phone = edt_phone.text.toString()
 
                 when {
+                    username.isEmpty() -> edt_username.error =
+                        getString(R.string.validation_must_be_filled)
+                    username.contains(" ") -> edt_username.error = "Space not allowed"
+                    username.length < 3 -> edt_username.error =
+                        "Username must be more than 3 characters"
                     name.isEmpty() -> edt_name.error = getString(R.string.validation_must_be_filled)
                     name.length < 3 -> edt_name.error = "Name must be more than 3 characters"
                     email.isEmpty() -> edt_email.error =
@@ -47,55 +53,81 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                     phone.isEmpty() -> edt_phone.error =
                         getString(R.string.validation_must_be_filled)
                     else -> {
-                        val auth = FirebaseAuth.getInstance()
-                        auth.createUserWithEmailAndPassword(email, password)
+                        val store = FirebaseFirestore.getInstance()
+                        // Check username is Exists
+                        store.collection("users").whereEqualTo("username", username).limit(1)
+                            .get()
                             .addOnCompleteListener {
                                 if (it.isSuccessful) {
-                                    val user = hashMapOf<String, Any>(
-                                        "name" to name,
-                                        "email" to email,
-                                        "phone" to phone
-                                    )
+                                    val isEmpty = it.result?.isEmpty
+                                    // If username doesn't exists
+                                    if (isEmpty!!) {
+                                        val auth = FirebaseAuth.getInstance()
+                                        // Register auth
+                                        auth.createUserWithEmailAndPassword(email, password)
+                                            .addOnCompleteListener { task ->
+                                                if (task.isSuccessful) {
+                                                    val user = hashMapOf<String, Any>(
+                                                        "id" to auth.uid.toString(),
+                                                        "username" to username,
+                                                        "name" to name,
+                                                        "email" to email,
+                                                        "phone" to phone
+                                                    )
 
-                                    val store = FirebaseFirestore.getInstance()
-                                    store
-                                        .collection("users")
-                                        .document(auth.uid.toString())
-                                        .set(user)
-                                        .addOnCompleteListener { storeTask ->
-                                            if (storeTask.isSuccessful) {
-                                                Toast.makeText(
-                                                    this, "Register successfully",
-                                                    Toast.LENGTH_SHORT
-                                                ).show()
-                                                finish()
-                                            } else {
+                                                    // Store data to the Firestore
+                                                    store
+                                                        .collection("users")
+                                                        .document(auth.uid.toString())
+                                                        .set(user)
+                                                        .addOnCompleteListener { storeTask ->
+                                                            if (storeTask.isSuccessful) {
+                                                                Toast.makeText(
+                                                                    this,
+                                                                    "Register successfully",
+                                                                    Toast.LENGTH_SHORT
+                                                                ).show()
+                                                                finish()
+                                                            } else {
+                                                                Toast.makeText(
+                                                                    this, "Register failed",
+                                                                    Toast.LENGTH_SHORT
+                                                                ).show()
+                                                            }
+                                                        }
+                                                        .addOnFailureListener { exception ->
+                                                            println("LogRegister: ${exception.message}")
+                                                            Toast.makeText(
+                                                                this, "Register failed",
+                                                                Toast.LENGTH_SHORT
+                                                            ).show()
+                                                        }
+                                                } else {
+                                                    Toast.makeText(
+                                                        this, "Register failed",
+                                                        Toast.LENGTH_SHORT
+                                                    ).show()
+                                                }
+                                            }
+                                            .addOnFailureListener { failure ->
+                                                println("LogRegister: ${failure.message}")
                                                 Toast.makeText(
                                                     this, "Register failed",
                                                     Toast.LENGTH_SHORT
                                                 ).show()
                                             }
-                                        }
-                                        .addOnFailureListener {
-                                            println("LogRegister: ${it.message}")
-                                            Toast.makeText(
-                                                this, "Register failed",
-                                                Toast.LENGTH_SHORT
-                                            ).show()
-                                        }
-                                } else {
-                                    Toast.makeText(
-                                        this, "Register failed",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
+                                    } else {
+                                        val msg = "Username has been taken"
+                                        edt_username.error = msg
+                                        Toast.makeText(
+                                            this, msg,
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
                                 }
                             }
-                            .addOnFailureListener {
-                                println("LogRegister: ${it.message}")
-                                Toast.makeText(
-                                    this, "Register failed",
-                                    Toast.LENGTH_SHORT
-                                ).show()
+                            .addOnFailureListener { failure ->
+                                println("LogRegister: ${failure.message}")
                             }
                     }
                 }

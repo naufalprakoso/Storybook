@@ -15,7 +15,8 @@
     <string name="title_name">Name</string>
     <string name="validation_must_be_filled">Must be filled</string>
     <string name="sample_name">Naufal Prakoso</string>
-    <string name="sample_email">mnaufalfp@gmail.com</string>
+    <string name="sample_username">naufalprakoso</string>
     <string name="title_posts">Posts</string>
     <string name="title_circle">Circle</string>
+    <string name="title_username">Username</string>
 </resources>

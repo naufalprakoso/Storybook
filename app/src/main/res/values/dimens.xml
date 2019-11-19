@@ -2,6 +2,7 @@
 <resources>
     <dimen name="normal_margin">16dp</dimen>
     <dimen name="large_margin">24dp</dimen>
+    <dimen name="extra_large_margin">32dp</dimen>
     <dimen name="normal_padding">16dp</dimen>
     <dimen name="normal_elevation">8dp</dimen>
     <dimen name="large_elevation">16dp</dimen>
