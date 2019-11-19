@@ -1,17 +1,23 @@
 package com.naufalprakoso.storybook.ui.profile
 
-
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.tabs.TabLayout
+import com.google.firebase.auth.FirebaseAuth
 import com.naufalprakoso.storybook.R
+import com.naufalprakoso.storybook.ui.auth.login.LoginActivity
 import kotlinx.android.synthetic.main.fragment_profile.view.*
 
-class ProfileFragment : Fragment() {
+class ProfileFragment : Fragment(), View.OnClickListener {
+
+    private lateinit var auth: FirebaseAuth
 
     companion object {
         fun newInstance(): Fragment {
@@ -24,6 +30,8 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
+
+        auth = FirebaseAuth.getInstance()
 
         view.tab_layout.setupWithViewPager(view.view_pager)
         view.tab_layout.tabGravity = TabLayout.GRAVITY_FILL
@@ -58,7 +66,37 @@ class ProfileFragment : Fragment() {
             }
         })
 
+        view.btn_logout.setOnClickListener(this)
+        view.btn_edit_profile.setOnClickListener(this)
+
         return view
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.btn_logout -> {
+                MaterialAlertDialogBuilder(context)
+                    .setTitle("Wanna logout?")
+                    .setMessage("Are you sure to logout?")
+                    .setPositiveButton("Sure") { _, _ ->
+                        auth.signOut()
+
+                        Toast.makeText(
+                            context, "Good bye~",
+                            Toast.LENGTH_SHORT
+                        ).show()
+
+                        val intent = Intent(context, LoginActivity::class.java)
+                        startActivity(intent)
+                        activity?.finish()
+                    }
+                    .setNegativeButton("Cancel", null)
+                    .show()
+            }
+            R.id.btn_edit_profile -> {
+
+            }
+        }
     }
 
 }
