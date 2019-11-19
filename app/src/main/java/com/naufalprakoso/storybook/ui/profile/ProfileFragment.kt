@@ -41,7 +41,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
                 if (it.isSuccessful) {
                     val user = it.result?.documents?.get(0)?.toObject(User::class.java)
                     view.txt_name.text = user?.name
-                    view.txt_username.text = user?.username
+                    view.txt_username.text = getString(R.string.profile_username, user?.username)
                 }
             }
 

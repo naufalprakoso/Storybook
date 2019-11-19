@@ -20,4 +20,6 @@
     <string name="title_circle">Circle</string>
     <string name="title_username">Username</string>
     <string name="title_edit_profile">Edit Profile</string>
+
+    <string name="profile_username">\@%1$s</string>
 </resources>
