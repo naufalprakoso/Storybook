@@ -11,7 +11,7 @@ class TabsProfileManager(
     private var mNumOfTabs: Int
 ) : FragmentStatePagerAdapter(fm) {
 
-    private val tabTitles = arrayOf("Posts", "Circle")
+    private val tabTitles = arrayOf("Stories", "Circle")
 
     override fun getCount(): Int {
         return mNumOfTabs

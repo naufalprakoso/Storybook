@@ -1,5 +1,6 @@
 package com.naufalprakoso.storybook.ui.profile.story
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +12,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 import com.naufalprakoso.storybook.R
+import com.naufalprakoso.storybook.data.Const
 import com.naufalprakoso.storybook.model.Story
+import com.naufalprakoso.storybook.ui.story.detail.DetailStoryActivity
 import kotlinx.android.synthetic.main.fragment_post.view.*
 
 class MyStoryFragment : Fragment() {
@@ -31,7 +34,11 @@ class MyStoryFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_post, container, false)
 
-        adapter = StoryAdapter()
+        adapter = StoryAdapter {
+            val intent = Intent(context, DetailStoryActivity::class.java)
+            intent.putExtra(Const.STORY_KEY, it)
+            startActivity(intent)
+        }
         view.rv_stories.setHasFixedSize(true)
         view.rv_stories.layoutManager = GridLayoutManager(context, 3)
         view.rv_stories.adapter = adapter

@@ -1,28 +1,26 @@
-package com.naufalprakoso.storybook.ui.profile.story
+package com.naufalprakoso.storybook.ui.explore
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.naufalprakoso.storybook.R
 import com.naufalprakoso.storybook.model.Story
-import kotlinx.android.synthetic.main.item_my_story.view.*
 
-class StoryAdapter(
+class ExploreAdapter(
     private val callback: (Story) -> Unit
-) : RecyclerView.Adapter<StoryAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<ExploreAdapter.ViewHolder>() {
 
-    private val stories = ArrayList<Story>()
+    private val stories = arrayListOf<Story>()
 
-    fun setStories(stories: List<Story>) {
+    fun setStories(stories: ArrayList<Story>) {
         this.stories.addAll(stories)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
         ViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.item_my_story,
+                R.layout.item_explore,
                 parent,
                 false
             )
@@ -36,13 +34,7 @@ class StoryAdapter(
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         fun bindItem(story: Story, callback: (Story) -> Unit) {
-            Glide.with(itemView.context)
-                .load(story.featuredImage)
-                .into(itemView.img_story)
 
-            itemView.setOnClickListener {
-                callback(story)
-            }
         }
     }
 

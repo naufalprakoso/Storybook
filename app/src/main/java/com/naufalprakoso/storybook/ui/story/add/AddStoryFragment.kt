@@ -1,4 +1,4 @@
-package com.naufalprakoso.storybook.ui.story
+package com.naufalprakoso.storybook.ui.story.add
 
 
 import android.os.Bundle
