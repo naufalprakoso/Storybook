@@ -6,89 +6,81 @@
     android:layout_height="match_parent"
     tools:context=".ui.profile.ProfileFragment">
 
-<!--    <RelativeLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent">-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-<!--        <ImageView-->
-<!--            android:id="@+id/img_logo"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:layout_marginTop="@dimen/padding_normal"-->
-<!--            android:adjustViewBounds="true" />-->
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:adjustViewBounds="true" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/txt_name"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@+id/img_logo"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:layout_marginTop="@dimen/padding_normal"-->
-<!--            android:text="@string/sample_user_name"-->
-<!--            android:textSize="20sp"-->
-<!--            android:textStyle="bold" />-->
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:text="@string/sample_name"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/txt_email"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@+id/txt_name"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:text="@string/sample_user_email" />-->
+        <TextView
+            android:id="@+id/txt_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_name"
+            android:layout_centerHorizontal="true"
+            android:text="@string/sample_email" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/txt_balance"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@+id/txt_email"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:text="@string/sample_user_balance" />-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:background="@drawable/bg_auth_button"
+            android:paddingStart="@dimen/normal_padding"
+            android:paddingEnd="@dimen/normal_padding"
+            android:text="Edit Profile"
+            android:textColor="@android:color/white"
+            app:cornerRadius="@dimen/normal_radius"
+            app:icon="@drawable/ic_edit_black"
+            app:iconTint="@android:color/white"
+            app:rippleColor="@color/colorPrimary" />
 
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/btn_edit_profile"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/txt_balance"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:layout_marginTop="@dimen/padding_normal"-->
-<!--            android:backgroundTint="@color/colorAccent"-->
-<!--            android:paddingStart="@dimen/padding_normal"-->
-<!--            android:paddingEnd="@dimen/padding_normal"-->
-<!--            android:text="@string/edit_profile"-->
-<!--            android:textColor="@color/colorWhite"-->
-<!--            app:cornerRadius="@dimen/card_corner_radius"-->
-<!--            app:icon="@drawable/ic_edit"-->
-<!--            app:iconTint="@color/colorWhite"-->
-<!--            app:rippleColor="@color/rippleAccent" />-->
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_edit_profile"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:backgroundTint="@android:color/white"
+            app:elevation="0dp">
 
-<!--        <com.google.android.material.appbar.AppBarLayout-->
-<!--            android:id="@+id/app_bar_layout"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@+id/btn_edit_profile"-->
-<!--            android:layout_marginTop="@dimen/padding_normal"-->
-<!--            android:backgroundTint="@color/colorWhite"-->
-<!--            app:elevation="0dp">-->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabIndicatorColor="@color/colorAccent"
+                app:tabRippleColor="@color/colorAccent"
+                app:tabSelectedTextColor="@color/colorPrimaryDark"
+                app:tabTextColor="@color/colorPrimary" />
 
-<!--            <com.google.android.material.tabs.TabLayout-->
-<!--                android:id="@+id/tab_layout"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:tabIndicatorColor="@color/colorAccent"-->
-<!--                app:tabRippleColor="@color/colorAccent"-->
-<!--                app:tabSelectedTextColor="@color/textColorPrimary"-->
-<!--                app:tabTextColor="@color/textColorSecondary" />-->
+        </com.google.android.material.appbar.AppBarLayout>
 
-<!--        </com.google.android.material.appbar.AppBarLayout>-->
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/app_bar_layout"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-<!--        <androidx.viewpager.widget.ViewPager-->
-<!--            android:id="@+id/view_pager"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_below="@+id/app_bar_layout"-->
-<!--            app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
-
-<!--    </RelativeLayout>-->
+    </RelativeLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

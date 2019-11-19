@@ -5,4 +5,5 @@
     <dimen name="normal_padding">16dp</dimen>
     <dimen name="normal_elevation">8dp</dimen>
     <dimen name="large_elevation">16dp</dimen>
+    <dimen name="normal_radius">8dp</dimen>
 </resources>
