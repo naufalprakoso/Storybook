@@ -25,7 +25,6 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/normal_padding"
-            android:text="@string/sample_name"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -34,8 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_name"
-            android:layout_centerHorizontal="true"
-            android:text="@string/sample_username" />
+            android:layout_centerHorizontal="true" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_edit_profile"
@@ -47,7 +45,7 @@
             android:background="@drawable/bg_auth_button"
             android:paddingStart="@dimen/normal_padding"
             android:paddingEnd="@dimen/normal_padding"
-            android:text="Edit Profile"
+            android:text="@string/title_edit_profile"
             android:textColor="@android:color/white"
             app:cornerRadius="@dimen/normal_radius"
             app:icon="@drawable/ic_edit_black"

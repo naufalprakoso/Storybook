@@ -16,7 +16,8 @@
     <string name="validation_must_be_filled">Must be filled</string>
     <string name="sample_name">Naufal Prakoso</string>
     <string name="sample_username">naufalprakoso</string>
-    <string name="title_posts">Posts</string>
+    <string name="title_stories">Stories</string>
     <string name="title_circle">Circle</string>
     <string name="title_username">Username</string>
+    <string name="title_edit_profile">Edit Profile</string>
 </resources>

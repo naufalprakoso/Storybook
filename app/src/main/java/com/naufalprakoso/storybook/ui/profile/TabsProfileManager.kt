@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import com.naufalprakoso.storybook.ui.profile.circle.CircleFragment
-import com.naufalprakoso.storybook.ui.profile.post.PostFragment
+import com.naufalprakoso.storybook.ui.profile.story.MyStoryFragment
 
 class TabsProfileManager(
     fm: FragmentManager,
@@ -23,7 +23,7 @@ class TabsProfileManager(
 
     override fun getItem(position: Int): Fragment {
         return when (position) {
-            0 -> PostFragment.newInstance()
+            0 -> MyStoryFragment.newInstance()
             else -> CircleFragment.newInstance()
         }
     }

@@ -11,7 +11,9 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.naufalprakoso.storybook.R
+import com.naufalprakoso.storybook.model.User
 import com.naufalprakoso.storybook.ui.auth.login.LoginActivity
 import kotlinx.android.synthetic.main.fragment_profile.view.*
 
@@ -33,10 +35,20 @@ class ProfileFragment : Fragment(), View.OnClickListener {
 
         auth = FirebaseAuth.getInstance()
 
+        FirebaseFirestore.getInstance().collection("users")
+            .whereEqualTo("id", auth.uid.toString()).limit(1).get()
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    val user = it.result?.documents?.get(0)?.toObject(User::class.java)
+                    view.txt_name.text = user?.name
+                    view.txt_username.text = user?.username
+                }
+            }
+
         view.tab_layout.setupWithViewPager(view.view_pager)
         view.tab_layout.tabGravity = TabLayout.GRAVITY_FILL
 
-        view.tab_layout.addTab(view.tab_layout.newTab().setText(getString(R.string.title_posts)))
+        view.tab_layout.addTab(view.tab_layout.newTab().setText(getString(R.string.title_stories)))
         view.tab_layout.addTab(view.tab_layout.newTab().setText(getString(R.string.title_circle)))
 
         activity?.supportFragmentManager?.let {

@@ -1,4 +1,4 @@
-package com.naufalprakoso.storybook.ui.profile.post
+package com.naufalprakoso.storybook.ui.profile.story
 
 
 import android.os.Bundle
@@ -9,11 +9,11 @@ import android.view.ViewGroup
 
 import com.naufalprakoso.storybook.R
 
-class PostFragment : Fragment() {
+class MyStoryFragment : Fragment() {
 
     companion object {
         fun newInstance(): Fragment {
-            return PostFragment()
+            return MyStoryFragment()
         }
     }
 
