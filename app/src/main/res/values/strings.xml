@@ -24,7 +24,7 @@
     <string name="profile_username">\@%1$s</string>
     <string name="story_likes">(%1$d likes)</string>
     <string name="slider_position">%1$d/%2$d</string>
-    <string name="title_activity_detail_story"></string>
+    <string name="title_activity_detail_story">Detail Story</string>
     <string name="action_settings">Settings</string>
     <string name="title_comment">Comment</string>
     <string name="title_follow">Follow</string>

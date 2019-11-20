@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
+import com.google.android.material.appbar.AppBarLayout
 import com.google.firebase.firestore.FirebaseFirestore
 import com.naufalprakoso.storybook.R
 import com.naufalprakoso.storybook.data.Const
@@ -28,11 +28,31 @@ class DetailStoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_story)
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+
+        app_bar.addOnOffsetChangedListener(object : AppBarLayout.OnOffsetChangedListener {
+            var isShow = true
+            var scrollRange: Int? = -1
+
+            override fun onOffsetChanged(appBarLayout: AppBarLayout?, verticalOffset: Int) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout?.totalScrollRange
+                }
+
+                if (scrollRange?.plus(verticalOffset) == 0) {
+                    toolbar_layout.title = getString(R.string.title_activity_detail_story)
+                    isShow = true
+                } else if (isShow) {
+                    toolbar_layout.title = " "
+                    isShow = false
+                }
+            }
+        })
 
         story = intent.getParcelableExtra(Const.STORY_KEY)
 
@@ -97,12 +117,17 @@ class DetailStoryActivity : AppCompatActivity() {
 
                         sliderAdapter.setImages(images)
                         sliderAdapter.notifyDataSetChanged()
-                    } else{
+                    } else {
                         images.add(Image(story?.featuredImage!!))
                         sliderAdapter.setImages(images)
                         sliderAdapter.notifyDataSetChanged()
                     }
                 }
             }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
     }
 }
