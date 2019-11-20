@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.appbar.AppBarLayout
 import com.google.firebase.firestore.FirebaseFirestore
@@ -31,8 +32,7 @@ class DetailStoryActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite_black))
         }
 
         app_bar.addOnOffsetChangedListener(object : AppBarLayout.OnOffsetChangedListener {
