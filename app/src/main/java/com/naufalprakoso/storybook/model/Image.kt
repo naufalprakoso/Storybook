@@ -5,5 +5,5 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Image(
-    val Image: String = ""
+    val image: String = ""
 ): Parcelable

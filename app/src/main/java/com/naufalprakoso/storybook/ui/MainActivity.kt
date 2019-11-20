@@ -8,12 +8,13 @@ import com.naufalprakoso.storybook.R
 import com.naufalprakoso.storybook.data.Mock
 import com.naufalprakoso.storybook.ui.explore.ExploreFragment
 import com.naufalprakoso.storybook.ui.profile.ProfileFragment
+import com.naufalprakoso.storybook.ui.profile.circle.CircleFragment
 import com.naufalprakoso.storybook.ui.story.add.AddStoryFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var currentFragment = ExploreFragment.newInstance()
+    private var currentFragment = CircleFragment.newInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,23 +23,29 @@ class MainActivity : AppCompatActivity() {
 //        Mock.insertToMyStory1()
 //        Mock.insertToMyStory2()
 //        Mock.insertToMyStory3()
-        Mock.insertToMyStory4()
+//        Mock.insertToMyStory4()
 
         meow_bottom_nav.add(
             MeowBottomNavigation.Model(
                 1,
-                R.drawable.ic_explore_black
+                R.drawable.ic_person_pin_circle_black
             )
         )
         meow_bottom_nav.add(
             MeowBottomNavigation.Model(
                 2,
-                R.drawable.ic_book_black
+                R.drawable.ic_explore_black
             )
         )
         meow_bottom_nav.add(
             MeowBottomNavigation.Model(
                 3,
+                R.drawable.ic_book_black
+            )
+        )
+        meow_bottom_nav.add(
+            MeowBottomNavigation.Model(
+                4,
                 R.drawable.ic_person_black
             )
         )
@@ -49,14 +56,18 @@ class MainActivity : AppCompatActivity() {
         meow_bottom_nav.setOnClickMenuListener {
             when (it.id) {
                 1 -> {
-                    currentFragment = ExploreFragment.newInstance()
+                    currentFragment = CircleFragment.newInstance()
                     openFragment(currentFragment)
                 }
                 2 -> {
-                    currentFragment = AddStoryFragment.newInstance()
+                    currentFragment = ExploreFragment.newInstance()
                     openFragment(currentFragment)
                 }
                 3 -> {
+                    currentFragment = AddStoryFragment.newInstance()
+                    openFragment(currentFragment)
+                }
+                4 -> {
                     currentFragment = ProfileFragment.newInstance()
                     openFragment(currentFragment)
                 }

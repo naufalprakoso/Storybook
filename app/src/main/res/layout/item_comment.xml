@@ -36,6 +36,7 @@
             android:layout_below="@+id/txt_datetime"
             android:layout_marginTop="@dimen/normal_padding"
             android:text="@string/title_comment"
+            android:textSize="12sp"
             android:textColor="@color/colorPrimaryDark" />
 
         <TextView

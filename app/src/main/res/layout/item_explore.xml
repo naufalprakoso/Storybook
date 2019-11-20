@@ -28,7 +28,6 @@
             android:layout_marginStart="@dimen/normal_margin"
             android:layout_marginTop="@dimen/normal_margin"
             android:layout_marginEnd="@dimen/normal_margin"
-            android:text="Test"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -41,9 +40,8 @@
             android:layout_marginStart="@dimen/normal_margin"
             android:layout_marginEnd="@dimen/normal_margin"
             android:layout_marginBottom="@dimen/normal_margin"
-            android:text="Tue, Nov 26"
             android:textColor="@color/colorPrimary"
-            android:textSize="16sp" />
+            android:textSize="12sp" />
 
     </RelativeLayout>
 

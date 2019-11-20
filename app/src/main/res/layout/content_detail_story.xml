@@ -48,13 +48,24 @@
             android:layout_marginStart="@dimen/small_margin"
             android:layout_toEndOf="@+id/txt_datetime" />
 
+        <TextView
+            android:id="@+id/title_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_likes"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:text="@string/title_comments"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_comments"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/txt_likes"
-            tools:listitem="@layout/item_comment"
-            android:layout_marginTop="@dimen/small_margin" />
+            android:layout_below="@+id/title_comment"
+            tools:listitem="@layout/item_comment" />
 
     </RelativeLayout>
 

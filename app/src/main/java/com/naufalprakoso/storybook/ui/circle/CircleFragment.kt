@@ -1,4 +1,4 @@
-package com.naufalprakoso.storybook.ui.profile.circle
+package com.naufalprakoso.storybook.ui.circle
 
 
 import android.os.Bundle
@@ -13,7 +13,7 @@ class CircleFragment : Fragment() {
 
     companion object {
         fun newInstance(): Fragment {
-            return CircleFragment();
+            return CircleFragment()
         }
     }
 
@@ -21,7 +21,9 @@ class CircleFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_user_circle, container, false)
+        val view = inflater.inflate(R.layout.fragment_activity_circle, container, false)
+        return view
     }
+
 
 }
