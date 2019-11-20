@@ -49,10 +49,10 @@ class MyStoryFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        loadData()
+        loadStories()
     }
 
-    private fun loadData() {
+    private fun loadStories() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
 
         FirebaseFirestore.getInstance().collection("stories")

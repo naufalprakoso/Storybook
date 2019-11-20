@@ -1,5 +1,6 @@
 package com.naufalprakoso.storybook.ui.story.detail
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import com.naufalprakoso.storybook.R
 import com.naufalprakoso.storybook.data.Const
 import com.naufalprakoso.storybook.model.Comment
 import com.naufalprakoso.storybook.model.Story
+import com.naufalprakoso.storybook.ui.user.UserActivity
 import kotlinx.android.synthetic.main.activity_detail_story.*
 import kotlinx.android.synthetic.main.content_detail_story.*
 
@@ -37,7 +39,9 @@ class DetailStoryActivity : AppCompatActivity() {
         txt_title.text = story?.title
 
         adapter = CommentAdapter {
-
+            val intent = Intent(this, UserActivity::class.java)
+            intent.putExtra(Const.USER_UID_KEY, it.userId)
+            startActivity(intent)
         }
         rv_comments.setHasFixedSize(true)
         rv_comments.layoutManager = LinearLayoutManager(this)

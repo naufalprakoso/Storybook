@@ -54,6 +54,7 @@ class ExploreFragment : Fragment() {
     private fun loadData() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
 
+        // TODO: Change logic to inner circle only
         FirebaseFirestore.getInstance().collection("stories")
             .whereEqualTo("userId", userId).get()
             .addOnCompleteListener {

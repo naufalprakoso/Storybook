@@ -20,10 +20,11 @@ import kotlinx.android.synthetic.main.fragment_profile.view.*
 class ProfileFragment : Fragment(), View.OnClickListener {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var user: User
 
     companion object {
         fun newInstance(): Fragment {
-            return ProfileFragment();
+            return ProfileFragment()
         }
     }
 
@@ -39,9 +40,9 @@ class ProfileFragment : Fragment(), View.OnClickListener {
             .whereEqualTo("id", auth.uid.toString()).limit(1).get()
             .addOnCompleteListener {
                 if (it.isSuccessful) {
-                    val user = it.result?.documents?.get(0)?.toObject(User::class.java)
-                    view.txt_name.text = user?.name
-                    view.txt_username.text = getString(R.string.profile_username, user?.username)
+                    user = it.result?.documents?.get(0)?.toObject(User::class.java) ?: User()
+                    view.txt_name.text = user.name
+                    view.txt_username.text = getString(R.string.profile_username, user.username)
                 }
             }
 

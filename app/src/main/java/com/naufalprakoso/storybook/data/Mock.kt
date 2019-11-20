@@ -85,5 +85,21 @@ class Mock {
             val data = FirebaseFirestore.getInstance().collection("stories").document()
             data.set(story)
         }
+
+        fun insertToMyStory4() {
+            val currentTime = Calendar.getInstance().time
+
+            val story = hashMapOf(
+                "title" to "Test 4",
+                "featuredImage" to "https://firebasestorage.googleapis.com/v0/b/storybook-c8071.appspot.com/o/stories%2FFcRnFpPAe0cNf9J4FinXdDhDqBj2%2Fstory3.png?alt=media&token=9038f96a-1c3b-4382-a776-52103365069b",
+                "datetime" to currentTime.toString(),
+                "likes" to 0,
+                "userId" to "vwVK464POCTieYsn8ZvT9PbNvSY2",
+                "username" to "prakoso"
+            )
+
+            val data = FirebaseFirestore.getInstance().collection("stories").document()
+            data.set(story)
+        }
     }
 }
