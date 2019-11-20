@@ -1,6 +1,7 @@
 package com.naufalprakoso.storybook.data
 
 import com.google.firebase.firestore.FirebaseFirestore
+import com.naufalprakoso.storybook.model.CircleActivity
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
@@ -100,6 +101,26 @@ class Mock {
 
             val data = FirebaseFirestore.getInstance().collection("stories").document()
             data.set(story)
+        }
+
+        fun mockCircleActivities(): ArrayList<CircleActivity> {
+            val activities = arrayListOf<CircleActivity>()
+
+            val activity1 =
+                CircleActivity("prakoso", "Playing Boy Pablo - Everytime", "5 minutes ago")
+            val activity2 =
+                CircleActivity("vioo", "Playing Rex Orange Country - Sunflower", "10 minutes ago")
+            val activity3 = CircleActivity("pawpaw", "Playing Bella Ciao", "30 minutes ago")
+            val activity4 = CircleActivity("lius", "Playing Ramengvrl - CA\$HMERE", "1 hour ago")
+            val activity5 = CircleActivity("koso", "Playing Hivi - Khayalan", "a day ago")
+
+            activities.add(activity1)
+            activities.add(activity2)
+            activities.add(activity3)
+            activities.add(activity4)
+            activities.add(activity5)
+
+            return activities
         }
     }
 }

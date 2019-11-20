@@ -8,6 +8,7 @@
     <dimen name="large_elevation">16dp</dimen>
     <dimen name="normal_radius">8dp</dimen>
     <dimen name="small_margin">4dp</dimen>
+    <dimen name="small_elevation">2dp</dimen>
     <dimen name="app_bar_height">300dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>

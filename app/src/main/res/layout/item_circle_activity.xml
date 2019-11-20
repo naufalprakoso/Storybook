@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/customCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/normal_margin"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/normal_radius"
+    app:cardElevation="@dimen/normal_elevation">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,22 +15,41 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_title"
-            style="@style/customCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="@dimen/normal_radius"
-            app:cardElevation="@dimen/normal_elevation">
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardElevation="@dimen/small_elevation">
 
-            <TextView
-                android:id="@+id/txt_username"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/normal_margin"
-                android:text="\@naufalprakoso"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold" />
+                android:layout_margin="@dimen/normal_margin">
+
+                <TextView
+                    android:id="@+id/txt_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/txt_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_username"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txt_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/card_title"
+            android:layout_margin="@dimen/normal_margin"
+            android:textColor="@color/colorPrimary" />
 
     </RelativeLayout>
 
