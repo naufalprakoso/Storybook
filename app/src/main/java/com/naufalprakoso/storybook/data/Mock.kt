@@ -2,6 +2,7 @@ package com.naufalprakoso.storybook.data
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.naufalprakoso.storybook.model.CircleActivity
+import com.naufalprakoso.storybook.model.User
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
@@ -147,6 +148,24 @@ class Mock {
             activities.add(activity5)
 
             return activities
+        }
+
+        fun mockUsers(): ArrayList<User> {
+            val users = arrayListOf<User>()
+
+            val user1 = User("vwVK464POCTieYsn8ZvT9PbNvSY2", "prakoso", "Prakoso")
+            val user2 = User("vwVK464POCTieYsn8ZvT9PbNvSY2", "viona", "Vionna")
+            val user3 = User("vwVK464POCTieYsn8ZvT9PbNvSY2", "papaw", "Papaw")
+            val user4 = User("vwVK464POCTieYsn8ZvT9PbNvSY2", "yopaw", "Yohannes Pablo")
+            val user5 = User("vwVK464POCTieYsn8ZvT9PbNvSY2", "lius", "Lius")
+
+            users.add(user1)
+            users.add(user2)
+            users.add(user3)
+            users.add(user4)
+            users.add(user5)
+
+            return users
         }
     }
 }

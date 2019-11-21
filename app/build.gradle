@@ -55,4 +55,7 @@ dependencies {
 
 //    Image Slider
     implementation 'com.github.smarteist:autoimageslider:1.3.2'
+
+//    Circle Image
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
 }
