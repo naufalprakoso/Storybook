@@ -1,6 +1,5 @@
 package com.naufalprakoso.storybook.ui.story.add
 
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater

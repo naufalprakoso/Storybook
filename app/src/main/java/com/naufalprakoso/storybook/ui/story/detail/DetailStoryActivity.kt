@@ -2,6 +2,7 @@ package com.naufalprakoso.storybook.ui.story.detail
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +18,8 @@ import com.smarteist.autoimageslider.IndicatorAnimations
 import com.smarteist.autoimageslider.SliderAnimations
 import kotlinx.android.synthetic.main.activity_detail_story.*
 import kotlinx.android.synthetic.main.content_detail_story.*
+import kotlinx.android.synthetic.main.content_detail_story.txt_datetime
+import kotlinx.android.synthetic.main.content_detail_story.txt_username
 
 class DetailStoryActivity : AppCompatActivity() {
 
@@ -92,6 +95,12 @@ class DetailStoryActivity : AppCompatActivity() {
                     for (document in it.result?.documents!!) {
                         val comment = document.toObject(Comment::class.java)
                         comment?.let { it1 -> comments.add(it1) }
+                    }
+
+                    if (comments.isEmpty()) {
+                        title_comment.visibility = View.GONE
+                    } else {
+                        title_comment.visibility = View.VISIBLE
                     }
 
                     adapter.setComments(comments)
