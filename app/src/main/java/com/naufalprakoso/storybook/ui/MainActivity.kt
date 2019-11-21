@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var currentFragment = CircleActivityFragment.newInstance()
+    private var currentFragment = ExploreFragment.newInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,13 +29,13 @@ class MainActivity : AppCompatActivity() {
         meow_bottom_nav.add(
             MeowBottomNavigation.Model(
                 1,
-                R.drawable.ic_person_pin_circle_black
+                R.drawable.ic_explore_black
             )
         )
         meow_bottom_nav.add(
             MeowBottomNavigation.Model(
                 2,
-                R.drawable.ic_explore_black
+                R.drawable.ic_person_pin_circle_black
             )
         )
         meow_bottom_nav.add(
@@ -57,11 +57,11 @@ class MainActivity : AppCompatActivity() {
         meow_bottom_nav.setOnClickMenuListener {
             when (it.id) {
                 1 -> {
-                    currentFragment = CircleActivityFragment.newInstance()
+                    currentFragment = ExploreFragment.newInstance()
                     openFragment(currentFragment)
                 }
                 2 -> {
-                    currentFragment = ExploreFragment.newInstance()
+                    currentFragment = CircleActivityFragment.newInstance()
                     openFragment(currentFragment)
                 }
                 3 -> {

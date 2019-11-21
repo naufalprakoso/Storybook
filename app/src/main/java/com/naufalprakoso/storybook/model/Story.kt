@@ -11,7 +11,5 @@ data class Story(
     val likes: Int = 0,
     val title: String = "",
     val userId: String = "",
-    val username: String = "",
-    val comments: List<Comment> = listOf(),
-    val images: List<Image> = listOf()
+    val username: String = ""
 ) : Parcelable

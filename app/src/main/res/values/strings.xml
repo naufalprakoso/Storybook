@@ -27,4 +27,6 @@
     <string name="desc_create_story">Create stories by choosing from 150+ stunning templates. Use our advanced text tools with new fonts and get creative with background colors, textures, stickers and more.</string>
     <string name="title_your_story">Your Story</string>
     <string name="title_choose_image">Choose Image</string>
+    <string name="title_title">Title</string>
+    <string name="title_upload_image">Upload Image</string>
 </resources>
