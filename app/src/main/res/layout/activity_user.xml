@@ -38,9 +38,10 @@
             android:paddingStart="@dimen/normal_padding"
             android:paddingEnd="@dimen/normal_padding"
             android:text="@string/title_follow"
+            android:textAllCaps="false"
             android:textColor="@android:color/white"
             app:cornerRadius="@dimen/normal_radius"
-            app:rippleColor="@color/colorPrimary" />
+            app:rippleColor="@android:color/white" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_stories"

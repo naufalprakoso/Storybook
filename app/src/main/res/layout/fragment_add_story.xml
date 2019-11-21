@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.story.add.AddStoryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/img_bg_story"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/desc_story"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_bg_story"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        android:text="@string/desc_create_story"
+        android:textColor="@color/colorPrimary" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_add_story"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/desc_story"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/normal_padding"
+        android:paddingStart="@dimen/normal_padding"
+        android:paddingEnd="@dimen/normal_padding"
+        android:text="@string/title_create_story"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:cornerRadius="@dimen/normal_radius"
+        app:icon="@drawable/ic_book_black"
+        app:iconTint="@android:color/white"
+        app:rippleColor="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/img_bg_story_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_add_story"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter" />
+
+</RelativeLayout>

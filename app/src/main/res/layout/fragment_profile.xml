@@ -49,11 +49,12 @@
             android:paddingStart="@dimen/normal_padding"
             android:paddingEnd="@dimen/normal_padding"
             android:text="@string/title_edit_profile"
+            android:textAllCaps="false"
             android:textColor="@android:color/white"
             app:cornerRadius="@dimen/normal_radius"
             app:icon="@drawable/ic_edit_black"
             app:iconTint="@android:color/white"
-            app:rippleColor="@color/colorPrimary" />
+            app:rippleColor="@android:color/white" />
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar_layout"

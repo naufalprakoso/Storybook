@@ -103,6 +103,32 @@ class Mock {
             data.set(story)
         }
 
+        fun insertToFrame1() {
+            val currentTime = Calendar.getInstance().time
+
+            val frame = hashMapOf(
+                "image" to "https://firebasestorage.googleapis.com/v0/b/storybook-c8071.appspot.com/o/frames%2Fframe1.png?alt=media&token=605e67a4-f46f-4735-9dc9-e5431ca1c02c",
+                "datetime" to currentTime.toString(),
+                "title" to "Frame 1"
+            )
+
+            val data = FirebaseFirestore.getInstance().collection("frames").document()
+            data.set(frame)
+        }
+
+        fun insertToFrame2() {
+            val currentTime = Calendar.getInstance().time
+
+            val frame = hashMapOf(
+                "image" to "https://firebasestorage.googleapis.com/v0/b/storybook-c8071.appspot.com/o/frames%2Fframe2.png?alt=media&token=fd65c540-a66f-4013-b19a-eeb8f040b624",
+                "datetime" to currentTime.toString(),
+                "title" to "Frame 2"
+            )
+
+            val data = FirebaseFirestore.getInstance().collection("frames").document()
+            data.set(frame)
+        }
+
         fun mockCircleActivities(): ArrayList<CircleActivity> {
             val activities = arrayListOf<CircleActivity>()
 

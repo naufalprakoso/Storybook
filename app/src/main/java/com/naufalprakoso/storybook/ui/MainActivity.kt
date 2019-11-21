@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
 //        Mock.insertToMyStory2()
 //        Mock.insertToMyStory3()
 //        Mock.insertToMyStory4()
+//        Mock.insertToFrame1()
+//        Mock.insertToFrame2()
 
         meow_bottom_nav.add(
             MeowBottomNavigation.Model(

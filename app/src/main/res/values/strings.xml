@@ -29,4 +29,6 @@
     <string name="title_comment">Comment</string>
     <string name="title_follow">Follow</string>
     <string name="title_comments">Comments</string>
+    <string name="title_create_story">Create a Story</string>
+    <string name="desc_create_story">Create stories by choosing from 150+ stunning templates. Use our advanced text tools with new fonts and get creative with background colors, textures, stickers and more.</string>
 </resources>
