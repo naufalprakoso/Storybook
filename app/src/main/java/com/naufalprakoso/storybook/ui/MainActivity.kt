@@ -5,11 +5,10 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 import com.naufalprakoso.storybook.R
-import com.naufalprakoso.storybook.data.Mock
 import com.naufalprakoso.storybook.ui.circle.CircleActivityFragment
 import com.naufalprakoso.storybook.ui.explore.ExploreFragment
 import com.naufalprakoso.storybook.ui.profile.ProfileFragment
-import com.naufalprakoso.storybook.ui.story.add.AddStoryFragment
+import com.naufalprakoso.storybook.ui.story.intro.AddStoryFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

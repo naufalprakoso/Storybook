@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.story.add.AddStoryFragment">
+    tools:context=".ui.story.intro.AddStoryFragment">
 
     <ImageView
         android:id="@+id/img_bg_story"
