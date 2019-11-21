@@ -33,7 +33,7 @@ class DetailStoryActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        fab.setOnClickListener { view ->
+        fab.setOnClickListener {
             fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite_black))
         }
 

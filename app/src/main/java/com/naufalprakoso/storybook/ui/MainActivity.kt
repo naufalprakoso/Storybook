@@ -9,7 +9,6 @@ import com.naufalprakoso.storybook.data.Mock
 import com.naufalprakoso.storybook.ui.circle.CircleActivityFragment
 import com.naufalprakoso.storybook.ui.explore.ExploreFragment
 import com.naufalprakoso.storybook.ui.profile.ProfileFragment
-import com.naufalprakoso.storybook.ui.profile.circle.CircleFragment
 import com.naufalprakoso.storybook.ui.story.add.AddStoryFragment
 import kotlinx.android.synthetic.main.activity_main.*
 

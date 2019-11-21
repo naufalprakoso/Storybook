@@ -12,7 +12,7 @@ class CircleFragment : Fragment() {
 
     companion object {
         fun newInstance(): Fragment {
-            return CircleFragment();
+            return CircleFragment()
         }
     }
 
