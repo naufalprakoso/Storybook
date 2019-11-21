@@ -10,7 +10,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="@dimen/normal_margin"
-        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginTop="@dimen/normal_margin"
         android:src="@drawable/ic_back_black" />
 
     <TextView
@@ -18,8 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/large_margin"
-        android:layout_marginBottom="@dimen/normal_margin"
+        android:layout_margin="@dimen/normal_margin"
         android:text="Choose your frame story"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp" />
