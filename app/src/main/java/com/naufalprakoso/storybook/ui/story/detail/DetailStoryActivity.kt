@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import com.naufalprakoso.storybook.R
 import com.naufalprakoso.storybook.data.Const
@@ -35,6 +36,8 @@ class DetailStoryActivity : AppCompatActivity() {
 
         fab.setOnClickListener {
             fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite_black))
+            Snackbar.make(it, "Like this story", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
         }
 
         app_bar.addOnOffsetChangedListener(object : AppBarLayout.OnOffsetChangedListener {

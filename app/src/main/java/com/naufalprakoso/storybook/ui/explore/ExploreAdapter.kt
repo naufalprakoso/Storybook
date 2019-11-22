@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.naufalprakoso.storybook.R
 import com.naufalprakoso.storybook.model.Story
-import kotlinx.android.synthetic.main.item_explore.view.*
+import kotlinx.android.synthetic.main.item_my_story.view.*
 
 class ExploreAdapter(
     private val callback: (Story) -> Unit
@@ -22,7 +22,7 @@ class ExploreAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
         ViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.item_explore,
+                R.layout.item_my_story,
                 parent,
                 false
             )
@@ -36,10 +36,11 @@ class ExploreAdapter(
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         fun bindItem(story: Story, callback: (Story) -> Unit) {
-            Glide.with(itemView.context).load(story.featuredImage).into(itemView.img_story)
-
+            Glide.with(itemView.context)
+                .load(story.featuredImage)
+                .into(itemView.img_story)
             itemView.txt_title.text = story.title
-            itemView.txt_date.text = story.datetime.substring(0, 10)
+            itemView.txt_likes.text = itemView.context.getString(R.string.story_likes, story.likes)
 
             itemView.setOnClickListener {
                 callback(story)
