@@ -39,6 +39,8 @@ class StoryAdapter(
             Glide.with(itemView.context)
                 .load(story.featuredImage)
                 .into(itemView.img_story)
+            itemView.txt_title.text = story.title
+            itemView.txt_likes.text = itemView.context.getString(R.string.story_likes, story.likes)
 
             itemView.setOnClickListener {
                 callback(story)

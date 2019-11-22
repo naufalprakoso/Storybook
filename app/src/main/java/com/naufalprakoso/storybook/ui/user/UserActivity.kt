@@ -28,7 +28,7 @@ class UserActivity : AppCompatActivity() {
             startActivity(intent)
         }
         rv_stories.setHasFixedSize(true)
-        rv_stories.layoutManager = GridLayoutManager(this, 3)
+        rv_stories.layoutManager = GridLayoutManager(this, 2)
         rv_stories.adapter = adapter
 
         val userId = intent.getStringExtra(Const.USER_UID_KEY)

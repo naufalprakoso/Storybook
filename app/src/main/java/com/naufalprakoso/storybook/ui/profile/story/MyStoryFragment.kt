@@ -39,7 +39,7 @@ class MyStoryFragment : Fragment() {
             startActivity(intent)
         }
         view.rv_stories.setHasFixedSize(true)
-        view.rv_stories.layoutManager = GridLayoutManager(context, 3)
+        view.rv_stories.layoutManager = GridLayoutManager(context, 2)
         view.rv_stories.adapter = adapter
 
         return view

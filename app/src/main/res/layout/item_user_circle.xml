@@ -4,7 +4,9 @@
     style="@style/customCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/normal_margin"
+    android:layout_marginStart="@dimen/normal_margin"
+    android:layout_marginTop="@dimen/large_margin"
+    android:layout_marginEnd="@dimen/normal_margin"
     android:orientation="vertical"
     app:cardCornerRadius="@dimen/normal_radius"
     app:cardElevation="@dimen/normal_elevation">
