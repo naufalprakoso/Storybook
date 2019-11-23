@@ -42,7 +42,7 @@ class ExploreAdapter(
             itemView.txt_title.text = story.title
             itemView.txt_likes.text = itemView.context.getString(R.string.story_likes, story.likes)
 
-            itemView.setOnClickListener {
+            itemView.card_img.setOnClickListener {
                 callback(story)
             }
         }
