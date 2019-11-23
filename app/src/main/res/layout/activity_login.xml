@@ -19,7 +19,8 @@
             android:layout_alignParentEnd="true"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
-            android:src="@drawable/bg_login" />
+            android:src="@drawable/bg_login"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/txt_login_title"
@@ -121,7 +122,7 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/bg_auth_button" />
+                    android:src="@color/colorPrimary" />
 
                 <ImageView
                     android:layout_width="40dp"

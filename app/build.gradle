@@ -58,4 +58,7 @@ dependencies {
 
 //    Circle Image
     implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+//    TimelineView
+    implementation 'com.github.vipulasri:timelineview:1.0.6'
 }

@@ -19,7 +19,8 @@
             android:layout_alignParentEnd="true"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
-            android:src="@drawable/bg_register" />
+            android:src="@drawable/bg_register"
+            android:visibility="invisible" />
 
         <ImageView
             android:id="@+id/btn_back"
@@ -190,7 +191,7 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/bg_auth_button" />
+                    android:src="@color/colorPrimary" />
 
                 <ImageView
                     android:layout_width="40dp"

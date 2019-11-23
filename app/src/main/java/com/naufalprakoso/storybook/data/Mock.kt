@@ -140,12 +140,20 @@ class Mock {
             val activity3 = CircleActivity("pawpaw", "Playing Bella Ciao", "30 minutes ago")
             val activity4 = CircleActivity("lius", "Playing Ramengvrl - CA\$HMERE", "1 hour ago")
             val activity5 = CircleActivity("koso", "Playing Hivi - Khayalan", "a day ago")
+            val activity6 = CircleActivity("koso", "Playing Mocca - Happy", "two days ago")
+            val activity7 = CircleActivity("koso", "Playing Mocca - Teman Sejati", "two days ago")
+            val activity8 = CircleActivity("koso", "Playing 88rising - Midsummer Madness", "a week ago")
+            val activity9 = CircleActivity("koso", "Playing NIKI - Vintage", "a week ago")
 
             activities.add(activity1)
             activities.add(activity2)
             activities.add(activity3)
             activities.add(activity4)
             activities.add(activity5)
+            activities.add(activity6)
+            activities.add(activity7)
+            activities.add(activity8)
+            activities.add(activity9)
 
             return activities
         }
