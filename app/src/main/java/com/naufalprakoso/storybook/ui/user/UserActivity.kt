@@ -9,7 +9,7 @@ import com.naufalprakoso.storybook.R
 import com.naufalprakoso.storybook.data.Const
 import com.naufalprakoso.storybook.model.Story
 import com.naufalprakoso.storybook.model.User
-import com.naufalprakoso.storybook.ui.story.detail.DetailStoryActivity
+import com.naufalprakoso.storybook.ui.story.detail.NewDetailStoryActivity
 import kotlinx.android.synthetic.main.activity_user.*
 
 class UserActivity : AppCompatActivity() {
@@ -23,7 +23,7 @@ class UserActivity : AppCompatActivity() {
         setContentView(R.layout.activity_user)
 
         adapter = StoryAdapter {
-            val intent = Intent(this, DetailStoryActivity::class.java)
+            val intent = Intent(this, NewDetailStoryActivity::class.java)
             intent.putExtra(Const.STORY_KEY, it)
             startActivity(intent)
         }

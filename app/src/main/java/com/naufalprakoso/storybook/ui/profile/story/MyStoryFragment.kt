@@ -13,7 +13,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.naufalprakoso.storybook.R
 import com.naufalprakoso.storybook.data.Const
 import com.naufalprakoso.storybook.model.Story
-import com.naufalprakoso.storybook.ui.story.detail.DetailStoryActivity
+import com.naufalprakoso.storybook.ui.story.detail.NewDetailStoryActivity
 import kotlinx.android.synthetic.main.fragment_post.view.*
 
 class MyStoryFragment : Fragment() {
@@ -34,7 +34,7 @@ class MyStoryFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_post, container, false)
 
         adapter = StoryAdapter {
-            val intent = Intent(context, DetailStoryActivity::class.java)
+            val intent = Intent(context, NewDetailStoryActivity::class.java)
             intent.putExtra(Const.STORY_KEY, it)
             startActivity(intent)
         }

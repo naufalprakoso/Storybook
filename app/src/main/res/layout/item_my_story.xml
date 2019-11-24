@@ -18,7 +18,7 @@
         <ImageView
             android:id="@+id/img_story"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="250dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             android:src="@drawable/story3" />
