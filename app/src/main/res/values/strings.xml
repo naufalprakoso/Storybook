@@ -29,4 +29,5 @@
     <string name="title_choose_image">Choose Image</string>
     <string name="title_title">Title</string>
     <string name="title_upload_image">Upload Image</string>
+    <string name="premium_desc">Storybook+ access all app features. This subscription automatically renews for IDR 20,000.00 per month. Subscriptions will automatically renew unless cancelled within 24 hours before the end of the current period. Payment will be charged to your Google Account at the confirmation of purchase. You can manage and cancel your subscription by going to your account settings in the Google Play Store - but seriously, you won\'t want to.</string>
 </resources>

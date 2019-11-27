@@ -7,6 +7,7 @@ import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 import com.naufalprakoso.storybook.R
 import com.naufalprakoso.storybook.ui.circle.CircleActivityFragment
 import com.naufalprakoso.storybook.ui.explore.ExploreFragment
+import com.naufalprakoso.storybook.ui.premium.JoinPremiumFragment
 import com.naufalprakoso.storybook.ui.profile.ProfileFragment
 import com.naufalprakoso.storybook.ui.story.intro.AddStoryFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -41,12 +42,18 @@ class MainActivity : AppCompatActivity() {
         meow_bottom_nav.add(
             MeowBottomNavigation.Model(
                 3,
-                R.drawable.ic_book_black
+                R.drawable.ic_add_black
             )
         )
         meow_bottom_nav.add(
             MeowBottomNavigation.Model(
                 4,
+                R.drawable.ic_store_mall_directory_black
+            )
+        )
+        meow_bottom_nav.add(
+            MeowBottomNavigation.Model(
+                5,
                 R.drawable.ic_person_black
             )
         )
@@ -69,6 +76,10 @@ class MainActivity : AppCompatActivity() {
                     openFragment(currentFragment)
                 }
                 4 -> {
+                    currentFragment = JoinPremiumFragment.newInstance()
+                    openFragment(currentFragment)
+                }
+                5 -> {
                     currentFragment = ProfileFragment.newInstance()
                     openFragment(currentFragment)
                 }

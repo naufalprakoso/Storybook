@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.premium.JoinPremiumFragment">
+
+    <TextView
+        android:id="@+id/title_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:text="Storybook+"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/title_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_name"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:text="THE FULL STORYBOOK EXPERIENCE"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/check_1"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/title_desc"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:src="@drawable/ic_check_black"
+        android:tint="@android:color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_desc"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginTop="18dp"
+        android:layout_toEndOf="@+id/check_1"
+        android:text="100+ story templates and fonts"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/check_2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/check_1"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:src="@drawable/ic_check_black"
+        android:tint="@android:color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/check_1"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/check_2"
+        android:text="Early access to collections"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/check_3"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/check_2"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:src="@drawable/ic_check_black"
+        android:tint="@android:color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/check_2"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/check_3"
+        android:text="Exclusive releases and designs"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/check_4"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/check_3"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:src="@drawable/ic_check_black"
+        android:tint="@android:color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/check_3"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/check_4"
+        android:text="Cancel anytime"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_purchase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/check_4"
+        android:layout_marginStart="@dimen/large_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/large_margin"
+        android:backgroundTint="@android:color/white"
+        android:text="Start Now"
+        android:textColor="@color/colorPrimary"
+        app:cornerRadius="16dp"
+        app:rippleColor="@color/colorPrimary" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_purchase"
+        android:layout_marginStart="@dimen/large_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginEnd="@dimen/large_margin"
+        android:gravity="center_horizontal"
+        android:text="@string/premium_desc"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+</RelativeLayout>
