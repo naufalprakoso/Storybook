@@ -8,5 +8,6 @@ data class Frame(
     val image: String = "",
     val datetime: String = "",
     val title: String = "",
-    val id: String = ""
+    val id: String = "",
+    val type: String = ""
 ) : Parcelable

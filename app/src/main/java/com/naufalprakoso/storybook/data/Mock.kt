@@ -110,7 +110,8 @@ class Mock {
             val frame = hashMapOf(
                 "image" to "https://firebasestorage.googleapis.com/v0/b/storybook-c8071.appspot.com/o/frames%2Fframe1.png?alt=media&token=605e67a4-f46f-4735-9dc9-e5431ca1c02c",
                 "datetime" to currentTime.toString(),
-                "title" to "Frame 1"
+                "title" to "Frame 1",
+                "type" to "free"
             )
 
             val data = FirebaseFirestore.getInstance().collection("frames").document()
@@ -123,7 +124,50 @@ class Mock {
             val frame = hashMapOf(
                 "image" to "https://firebasestorage.googleapis.com/v0/b/storybook-c8071.appspot.com/o/frames%2Fframe2.png?alt=media&token=fd65c540-a66f-4013-b19a-eeb8f040b624",
                 "datetime" to currentTime.toString(),
-                "title" to "Frame 2"
+                "title" to "Frame 2",
+                "type" to "free"
+            )
+
+            val data = FirebaseFirestore.getInstance().collection("frames").document()
+            data.set(frame)
+        }
+
+        fun insertToPremiumFrame1() {
+            val currentTime = Calendar.getInstance().time
+
+            val frame = hashMapOf(
+                "image" to "https://firebasestorage.googleapis.com/v0/b/storybook-c8071.appspot.com/o/frames%2Fframe_1.png?alt=media&token=bdb75be0-2305-4439-98c0-13d8ada30e36",
+                "datetime" to currentTime.toString(),
+                "title" to "Memories",
+                "type" to "plus"
+            )
+
+            val data = FirebaseFirestore.getInstance().collection("frames").document()
+            data.set(frame)
+        }
+
+        fun insertToPremiumFrame2() {
+            val currentTime = Calendar.getInstance().time
+
+            val frame = hashMapOf(
+                "image" to "https://firebasestorage.googleapis.com/v0/b/storybook-c8071.appspot.com/o/frames%2Fframe_2.png?alt=media&token=0e5d4a40-62ec-48ce-aca7-a5ea7358a74f",
+                "datetime" to currentTime.toString(),
+                "title" to "History",
+                "type" to "plus"
+            )
+
+            val data = FirebaseFirestore.getInstance().collection("frames").document()
+            data.set(frame)
+        }
+
+        fun insertToPremiumFrame3() {
+            val currentTime = Calendar.getInstance().time
+
+            val frame = hashMapOf(
+                "image" to "https://firebasestorage.googleapis.com/v0/b/storybook-c8071.appspot.com/o/frames%2Fframe_3.png?alt=media&token=053ed20d-d61f-49bd-bc30-21a8dae801c4",
+                "datetime" to currentTime.toString(),
+                "title" to "Beauty",
+                "type" to "plus"
             )
 
             val data = FirebaseFirestore.getInstance().collection("frames").document()

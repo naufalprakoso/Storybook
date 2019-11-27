@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 import com.naufalprakoso.storybook.R
+import com.naufalprakoso.storybook.data.Mock
 import com.naufalprakoso.storybook.ui.circle.CircleActivityFragment
 import com.naufalprakoso.storybook.ui.explore.ExploreFragment
 import com.naufalprakoso.storybook.ui.premium.JoinPremiumFragment
@@ -25,7 +26,9 @@ class MainActivity : AppCompatActivity() {
 //        Mock.insertToMyStory3()
 //        Mock.insertToMyStory4()
 //        Mock.insertToFrame1()
-//        Mock.insertToFrame2()
+//        Mock.insertToPremiumFrame1()
+//        Mock.insertToPremiumFrame2()
+//        Mock.insertToPremiumFrame3()
 
         meow_bottom_nav.add(
             MeowBottomNavigation.Model(
